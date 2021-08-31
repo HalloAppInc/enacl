@@ -21,11 +21,12 @@ else ifeq ($(UNAME_SYS), FreeBSD)
 	CC ?= cc
 	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes -I /usr/local/include
 	CXXFLAGS ?= -O3 -finline-functions -Wall
-	LDFLAGS ?= -fPIC -L /usr/local/lib
+	LDFLAGS ?= -fPIC -L /usr/local/lib -shared
 else ifeq ($(UNAME_SYS), Linux)
 	CC ?= gcc
 	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes
-	CXXFLAGS ?= -O3 -finline-functions -Wall -shared
+	CXXFLAGS ?= -O3 -finline-functions -Wall
+	LDFLAGS ?= -shared
 else ifeq ($(UNAME_SYS), SunOS)
 	CC = gcc
 	CFLAGS ?= -m64 -I/opt/local/include -O2 -std=c99 -finline-functions -Wall -Wmissing-prototypes
