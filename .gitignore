@@ -12,3 +12,5 @@ doc/*.png
 doc/*.css
 _build
 /.eqc-info
+.idea
+*.iml
